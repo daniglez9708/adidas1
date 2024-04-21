@@ -1,78 +1,146 @@
-<div class="card flex justify-center flex-col">
-
-    <!-- Fila 1 -->
-    <div class="flex gap-0">
-        <!-- Imagen 1 -->
-        <div class="w-1/3 px-0">
-            <img [src]="imageUrl" class="w-full max-h-96 h-auto">
+<div class="flex flex-col md:flex-row">
+    <div class="container mx-auto px-4 md:w-3/4 border-r border-gray-300">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <!-- Imagen 1 -->
+            <div class="w-full px-0">
+                <img [src]="product.Image1" class="w-full max-h-96 h-auto">
+            </div>
+            <!-- Imagen 2 -->
+            <div class="w-full px-0">
+                <img [src]="product.Image1" class="hidden md:block w-full max-h-96 h-auto">
+            </div>
         </div>
-        <!-- Imagen 2 -->
-        <div class="w-1/3 px-0">
-            <img [src]="imageUrl" class="w-full max-h-96 h-auto">
+        <!-- Fila 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <!-- Imagen 3 -->
+            <div class="w-full px-0">
+                <img [src]="product.Image1" class="hidden md:block w-full max-h-96 h-auto">
+            </div>
+            <!-- Imagen 4 -->
+            <div class="w-full px-0">
+                <img [src]="product.Image1" class="hidden md:block w-full max-h-96 h-auto">
+            </div>
         </div>
-    </div>
-    <!-- Fila 2 -->
-    <div class="flex gap-0">
-        <!-- Imagen 3 -->
-        <div class="w-1/3 px-0">
-            <img [src]="imageUrl" class="w-full max-h-96 h-auto">
+        <!-- Botón Show More -->
+        <div class="flex justify-center">
+            <button class="bg-white border border-black text-gray-400 py-2 px-4 -mt-6">Show More</button>
         </div>
-        <!-- Imagen 4 -->
-        <div class="w-1/3 px-0">
-            <img [src]="imageUrl" class="w-full max-h-96 h-auto">
+        <div class="mt-4"></div>
+        <hr class="mt-4 border-t-2 border-gray-300 w-full">
+        <div class="mt-4 ml-0 md:ml-10 flex justify-start items-center">
+            <p class="mr-auto">REVIEWS</p>
+            <div class="flex items-center">
+                <p-rating [ngModel]="product.Reviews.rating" [readonly]="true" [cancel]="false"></p-rating>
+                <i class="pi pi-chevron-down ml-2"></i>
+            </div>
         </div>
-    </div>
-
-    <!-- Botón Show More -->
-    <div class="flex justify-center mt-4 -ml-96">
-        <button class="bg-white border border-black text-gray-400 py-2 px-4 -mt-8">Show More</button>
-    </div>
-    <div class="mt-4"></div>
-    <hr class="mt-4 border-t-2 border-gray-300 w-1/2 ml-14">
-    <div class="mt-4 ml-16 flex items-center">
-        <p class="mr-96">REVIEWS</p>
-        <div class="flex ml-16">
-            <p-rating [ngModel]="3.5" [readonly]="true" [cancel]="false"></p-rating>
-            <i class="pi pi-chevron-down ml-2"></i>
+        <hr class="mt-4 border-t-2 border-gray-300 w-full">
+        <div class="mt-4 ml-0 md:ml-10 flex justify-start items-center">
+            <p class="mr-auto">DESCRIPTION</p>
+            <i class="pi pi-chevron-down ml-96 md:ml-0"></i>
         </div>
-    </div>
-    
-    <hr class="mt-4 border-t-2 border-gray-300 w-1/2 ml-14">
-    <div class="mt-4 ml-16 flex items-center">
-        <p class="mr-40">DESCRIPTION</p>
-        <i class="pi pi-chevron-down ml-96"></i>
-    </div>
-    
-    <hr class="mt-4 border-t-2 border-gray-300 w-1/2 ml-14">
-    <div class="mt-4 ml-16 flex items-center">
-        <p class="mr-72">DETAILS</p>
-        <i class="pi pi-chevron-down ml-80"></i>
-    </div>
-    <hr class="mt-4 border-t-2 border-gray-300 w-1/2 ml-14">
-    <div class="overflow-x-auto">
-        <div class="flex flex-wrap">
-            <div *ngFor="let product of productos.slice(0,3)" class="w-full md:w-1/5 px-2 mb-4">
-                <p-card class="w-full">
-                    <!-- Contenido de la tarjeta -->
-                    <div class="relative">
-                        <img [src]="product.Image1" alt="Product Image" class="w-full h-auto">
-                        <!-- Precio -->
-                        <div class="absolute bottom-0 left-0 bg-white p-2 rounded-tr-lg">
-                            <p class="text-sm font-semibold">{{ product.Price }}</p>
-                        </div>
-                    </div>
-                    <ng-template pTemplate="footer">
-                        <div class="card-footer flex flex-col items-start">
-                            <div class="rating-container mb-2">
-                                <p-rating [ngModel]="product.Reviews.rating" [readonly]="true" [cancel]="false"></p-rating>
+        <hr class="mt-4 border-t-2 border-gray-300 w-full">
+        <div class="mt-4 ml-0 md:ml-10 flex justify-start items-center">
+            <p class="mr-auto">DETAILS</p>
+            <i class="pi pi-chevron-down ml-96 md:ml-0"></i>
+        </div>
+        <hr class="mt-4 border-t-2 border-gray-300 w-full">
+        
+        <div class=" mt-16">
+            <p class="flex font-bold justify-start uppercase"> You may also like</p>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-10">
+                <div *ngFor="let product of productos.slice(0,5)" class="w-full md:w-1/5 px-2 mb-4">
+                    <p-card class="w-full max-w-sm">
+                        <!-- Contenido de la tarjeta -->
+                        <div class="relative">
+                            <img [src]="product.Image1" alt="Product Image" class="w-full h-auto">
+                            <!-- Precio -->
+                            <div class="absolute bottom-0 left-0 bg-white p-2 rounded-tr-lg">
+                                <p class="text-sm font-semibold">{{ product.Price }}</p>
                             </div>
-                            <p class="product-name text-sm truncate">{{ product.Name }}</p>
-                            <p class="product-category text-sm truncate">{{ product.Category }}</p>
                         </div>
-                    </ng-template>
-                </p-card>
+                        <ng-template pTemplate="footer">
+                            <div class="card-footer flex flex-col items-start">
+                                <div class="rating-container mb-2">
+                                    <p-rating [ngModel]="product.Reviews.rating" [readonly]="true"
+                                        [cancel]="false"></p-rating>
+                                </div>
+                                <p class="product-name text-sm truncate">{{ product.Name }}</p>
+                                <p class="product-category text-sm truncate">{{ product.Category }}</p>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
             </div>
         </div>
     </div>
-      
+    
+     <!-- Contenido del contenedor derecho -->
+     <div class="container mx-auto px-4 md:w-1/4 md:ml-4 mt-4 md:mt-0">
+        <div class="mt-4 md:mt-0">
+            <p class="product-name text-sm truncate font-helvetica">{{ product.Category }}</p>
+            <div class="flex items-center">
+                <p-rating [ngModel]="product.Reviews.rating" [readonly]="true" [cancel]="false"></p-rating>
+                <p class="text-sm ml-2 underline">{{ product.Reviews.votes}}</p>
+            </div>
+            <p class="font-bold mt-4 text-xl uppercase">{{product.Name}}</p>
+            <p class="mt-2 text-xl uppercase">{{product.Price}}</p>
+            <div class="bg-gray-200 mt-2 p-2 rounded">
+                <p>Popular over 44 people have bought this product in the last 24 hours.</p>
+            </div>
+            <div class="flex flex-col mt-4">
+                <p class="font-bold">Colors</p>
+                <div class="flex items-start">
+                    <div *ngFor="let colorDetail of product.Color_detail" class="mx-2">
+                        <img [src]="colorDetail.image_url" class="w-12 h-auto mt-2" alt="{{ colorDetail.color }}">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col mt-4">
+                <p class="font-bold">Sizes</p>
+                <div class="flex flex-wrap justify-start mt-2">
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white  py-1 px-2 m-1">Botón 1</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">Botón 2</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">Botón 3</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">Botón 4</button>
+                </div>
+            </div>
+            <div class="flex justify-start underline mt-4">
+                <p>Size Guide</p>
+            </div>
+            <div class="flex justify-start mt-4">
+                <button class="bg-black text-white text-xs md:text-sm lg:text-base h-10 md:h-12 lg:h-14 px-6 md:px-8 lg:px-10 py-2 md:py-3 lg:py-4 flex items-center shadow-md hover:bg-gray-900 hover:text-white mr-4">
+                    <span class="mr-auto">ADD TO BAG</span>
+                    <svg class="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                <div class="bg-white border border-black h-10 md:h-12 lg:h-14 w-10 md:w-12 lg:w-14 flex ml-4 justify-center">
+                    <i class="pi pi-heart text-lg md:text-xl lg:text-2xl flex items-center justify-center"></i>
+                </div>
+            </div>
+            <div class="flex justify-start items-start text-xs mt-4">
+                <p>4 interest-free payments of $27.50 with Klarna.</p>
+            </div>
+            <div class="flex justify-start items-start text-xs mt-2 underline">
+                <p>Learn More</p>
+            </div>
+            <hr class="mt-4 border-t-2 border-gray-300 w-full">
+            <div class="flex justify-start items-start mt-4">
+                <i class="pi pi-shop mr-3"></i>
+                <button class="underline hover:bg-black hover:text-white border-none bg-transparent">Check if available in Store</button>
+            </div>
+            <hr class="mt-4 border-t-2 border-gray-300 w-full">
+            <div class="flex justify-start items-center mt-4">
+                <i class="pi pi-check mr-3"></i>
+                <button class="underline hover:bg-black hover:text-white border-none bg-transparent text-left">Pay over time in interest-free installments with Affirm, Klarna or Afterpay</button>
+            </div>
+            <div class="flex justify-start items-center mt-4">
+                <i class="pi pi-truck mr-3"></i>
+                <button class="underline hover:bg-black hover:text-white border-none bg-transparent text-left">Join adiClub to get unlimited free standard shipping, returns, & exchanges</button>
+            </div>
+        </div>
+    </div>
+    
 </div>

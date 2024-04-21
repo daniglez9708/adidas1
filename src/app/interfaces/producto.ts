@@ -1,6 +1,7 @@
 // producto.ts
 
 export interface Producto {
+  id: string;
   Image: string;
   Image1: string;
   Content: string;

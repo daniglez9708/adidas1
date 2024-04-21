@@ -23,11 +23,12 @@ export class ListaProductosComponent {
   constructor(private productService: ProductService, private router: Router) { }
  
   ngOnInit(): void {
-    this.productService.getProductos().subscribe(
+    this.productService.cargarProductos().subscribe(
       (data: Producto[]) => {
         this.productos = data;
+        console.log(data);
+        
         this.ratingValue = this.productos[0].Reviews.rating
-        console.log(this.productos[0].Reviews.rating); // Verifica los datos en la consola
       },
       error => {
         console.error(error); // Maneja cualquier error que ocurra
@@ -57,5 +58,13 @@ onRatingChange(event: Event) {
 }
 navigateToProduct() {
   this.router.navigateByUrl('/prueba');
+}
+redirectToProduct(productUrl: string) {
+  console.log(productUrl);
+  
+  if (productUrl) {
+    // Redirigir a la página de detalle del producto con el productId como parámetro
+    this.router.navigate(['/prueba', productUrl]);
+  }
 }
 }

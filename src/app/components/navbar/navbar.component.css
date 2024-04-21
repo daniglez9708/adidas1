@@ -1,0 +1,6 @@
+/* Estilos para el menú responsive */
+.responsive-menubar {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos del menú se envuelvan en varias líneas */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}

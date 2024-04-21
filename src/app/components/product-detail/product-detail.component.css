@@ -1,0 +1,10 @@
+/* Archivo de estilos de componente de Angular */
+.p-rating .p-rating-star {
+    color: red !important; /* Cambiar el color de las estrellas */
+  }
+  
+  /* Cambiar el tamaño de las estrellas */
+  .p-rating .p-rating-star {
+    font-size: 24px;
+  }
+  

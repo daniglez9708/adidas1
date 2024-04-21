@@ -1,0 +1,11 @@
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    flex: 0 0 calc(50% - 5px); /* Establece el ancho de las tarjetas al 50% del contenedor */
+    margin-bottom: 10px;
+  }
+  

@@ -21,7 +21,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BadgeModule } from 'primeng/badge';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AccordionModule } from 'primeng/accordion';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    DividerModule,
+    AccordionModule,
+    TabMenuModule,
     SidebarModule,
     SlickCarouselModule,
     BadgeModule,

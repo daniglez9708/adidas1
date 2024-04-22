@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
 
   items: MenuItem[] | undefined
   sidebarTopActive: boolean = false;
+  sidebarLeftActive: boolean = false;
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;

@@ -25,6 +25,9 @@
         <div class="flex justify-center">
             <button class="bg-white border border-black text-gray-400 py-2 px-4 -mt-6">Show More</button>
         </div>
+        <!-- inicio del modificado-->
+        
+        <!--final-->
         <div class="mt-4"></div>
         <hr class="mt-4 border-t-2 border-gray-300 w-full">
         <div class="mt-4 ml-0 md:ml-10 flex justify-start items-center">
@@ -49,7 +52,7 @@
         <div class=" mt-16">
             <p class="flex font-bold justify-start uppercase"> You may also like</p>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-10">
-                <div *ngFor="let product of productos.slice(0,5)" class="w-full md:w-1/5 px-2 mb-4">
+                <div *ngFor="let product of productos.slice(0,5)" class="w-full px-2 mb-4 ">
                     <p-card class="w-full max-w-sm">
                         <!-- Contenido de la tarjeta -->
                         <div class="relative">
@@ -65,8 +68,7 @@
                                     <p-rating [ngModel]="product.Reviews.rating" [readonly]="true"
                                         [cancel]="false"></p-rating>
                                 </div>
-                                <p class="product-name text-sm truncate">{{ product.Name }}</p>
-                                <p class="product-category text-sm truncate">{{ product.Category }}</p>
+                                <p class="text-xs md:text-sm truncate">{{ product.Category }}</p>
                             </div>
                         </ng-template>
                     </p-card>
@@ -78,11 +80,14 @@
      <!-- Contenido del contenedor derecho -->
      <div class="container mx-auto px-4 md:w-1/4 md:ml-4 mt-4 md:mt-0">
         <div class="mt-4 md:mt-0">
+            <div class="flex flex-row gap-10">
             <p class="product-name text-sm truncate font-helvetica">{{ product.Category }}</p>
             <div class="flex items-center">
                 <p-rating [ngModel]="product.Reviews.rating" [readonly]="true" [cancel]="false"></p-rating>
                 <p class="text-sm ml-2 underline">{{ product.Reviews.votes}}</p>
             </div>
+            </div>
+            
             <p class="font-bold mt-4 text-xl uppercase">{{product.Name}}</p>
             <p class="mt-2 text-xl uppercase">{{product.Price}}</p>
             <div class="bg-gray-200 mt-2 p-2 rounded">
@@ -100,10 +105,10 @@
             <div class="flex flex-col mt-4">
                 <p class="font-bold">Sizes</p>
                 <div class="flex flex-wrap justify-start mt-2">
-                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white  py-1 px-2 m-1">Botón 1</button>
-                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">Botón 2</button>
-                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">Botón 3</button>
-                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">Botón 4</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white  py-1 px-2 m-1">M 4 / W 5</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">M 4.5 / W 5.5</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">M 5 / W 6</button>
+                    <button class="bg-white border border-gray-200 hover:bg-black hover:text-white py-1 px-2 m-1">M 5.5 / W 6.5</button>
                 </div>
             </div>
             <div class="flex justify-start underline mt-4">

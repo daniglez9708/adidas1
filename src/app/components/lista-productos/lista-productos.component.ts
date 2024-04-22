@@ -18,11 +18,28 @@ export class ListaProductosComponent {
   totalRecords: number = this.productos.length; // El total de productos
   first: number = 0;
   rows: number = 20;
- 
+  items: MenuItem[] | undefined;
+  itemss: MenuItem[] | undefined;
+
   
   constructor(private productService: ProductService, private router: Router) { }
  
   ngOnInit(): void {
+    this.items = [
+      { label: "All Men's Shoes" },
+      { label: "Sneakers" },
+      { label: "Running" },
+      { label: "Soccer" },
+      { label: "Walking" },
+      { label: "Slides & Sandals" },
+      { label: "Trail Running" },
+      { label: "Workout & Gym" },
+      { label: "Shoes $100 & Und" }
+    ];
+    this.itemss = [
+      { label: "All Men's Shoes" },
+      { label: "Sneakers" }
+    ];
     this.productService.cargarProductos().subscribe(
       (data: Producto[]) => {
         this.productos = data;
@@ -67,4 +84,6 @@ redirectToProduct(productUrl: string) {
     this.router.navigate(['/prueba', productUrl]);
   }
 }
+
+
 }

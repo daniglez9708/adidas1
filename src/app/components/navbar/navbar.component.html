@@ -1,5 +1,9 @@
 <p-sidebar [(visible)]="sidebarTopActive" position="top" [fullScreen]="mobileQuery.matches">
-    <h3>Top Sidebar</h3>
+    <div class="flex justify-center items-center">
+        <h3 class="font-bold text-black items-start">20% OFF TONS OF STYLES
+        </h3>
+    </div>
+    
 </p-sidebar>
 
 <div class="bg-black flex flex-row justify-between gap-2 lg:justify-center items-center px-4 py-2"
@@ -85,12 +89,19 @@
 
     <div class="flex items-center justify-center gap-2">
         <!-- Contenedor para el botón de menú -->
-        <button (click)="navigateToProduct()" class="w-[40px] h-auto">
+        <button (click)="sidebarLeftActive = true" class="w-[40px] h-auto">
             <i class="pi pi-bars font-bold" style="font-size: 1.4rem"></i>
         </button>
 
         <i class="pi pi-heart mx-2" style="font-size: 1.2rem"></i>
     </div>
+    <p-sidebar [(visible)]="sidebarLeftActive" position="left" [fullScreen]="mobileQuery.matches">
+        <div *ngFor="let item of items">
+            <h3>{{ item.label }}</h3>
+        </div>
+        
+    </p-sidebar>
+    
 
     <!-- Contenedor para el logo -->
     <div class="flex items-center justify-center item-center">

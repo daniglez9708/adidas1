@@ -18,6 +18,11 @@ export class ProductDetailComponent {
   constructor(private route: ActivatedRoute, private productService: ProductService) {}
 
   ngOnInit(): void {
+    this.productService.cargarProductos().subscribe(
+      (data: any) => {
+        this.productos = data
+      }
+    )
     this.route.paramMap.subscribe(params => {
       this.productId = params.get('productId');
       if (this.productId !== null) {

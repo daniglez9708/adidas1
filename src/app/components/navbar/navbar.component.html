@@ -1,48 +1,121 @@
-<div class="bg-black flex flex-col justify-center items-center md:flex-row">
+<p-sidebar [(visible)]="sidebarTopActive" position="top" [fullScreen]="mobileQuery.matches">
+    <h3>Top Sidebar</h3>
+</p-sidebar>
+
+<div class="bg-black flex flex-row justify-between gap-2 lg:justify-center items-center px-4 py-2"
+    (click)="sidebarTopActive = true">
     <!-- Texto principal -->
-    <div class="text-white mb-2 md:mb-0">FREE STANDARD SHIPPING WITH ADICLUB <i class="pi pi-chevron-down"></i></div>
+    <div class="invisible w-fit">
+        <i class="pi pi-chevron-down"></i>
+    </div>
+    <div class="text-white font-bold text-[11px] ">FREE STANDARD SHIPPING WITH ADICLUB </div>
+    <div class="text-white">
+        <i class="pi pi-chevron-down"></i>
+    </div>
 </div>
-<!-- Contenedor separado para los enlaces -->
-<div class="hidden md:flex justify-end items-center mr-10 mt-3">
-    <div class="mx-2">help </div>
-    <div class="mx-2">orders and returns</div>
-    <div class="mx-2">join adiClub</div>
-    <div class="mx-2">
-        <img src="/assets/us.png" style="width: 20px; height: auto;">
+
+
+<div class="hidden lg:flex flex-row px-5 py-2 border border-solid">
+    <!-- Contenedor para el logo -->
+    <div class="flex items-center justify-center item-center w-[10%]">
+        <!-- Contenedor para el botón de menú -->
+        <a (click)="navigateToProduct()" class="w-[60px] h-auto">
+            <svg viewBox="100 100 50 32" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M 150.07 131.439 L 131.925 100 L 122.206 105.606 L 137.112 131.439 L 150.07 131.439 Z M 132.781 131.439 L 120.797 110.692 L 111.078 116.298 L 119.823 131.439 L 132.781 131.439 Z M 109.718 121.401 L 115.509 131.439 L 102.551 131.439 L 100 127.007 L 109.718 121.401 Z"
+                    fill="black"></path>
+            </svg>
+        </a>
+    </div>
+
+
+    ` <div class="flex flex-col items-end w-full gap-2">
+        <!-- Contenedor separado para los enlaces -->
+        <div class="hidden md:flex justify-end items-center text-xs">
+            <div class="mx-2">help </div>
+            <div class="mx-2">orders and returns</div>
+            <div class="mx-2">join adiClub</div>
+            <div class="mx-2">
+                <img src="/assets/us.png" style="width: 20px; height: auto;">
+
+            </div>
+        </div>
+
+
+        <div class="flex flex-row justify-between lg:justify-end items-center lg:gap-14 w-full">
+
+            <div class="w-[20%] h-full lg:flex hidden">
+
+            </div>
+
+            <!-- Contenedor para el menú -->
+            <div class="flex items-center justify-center h-full w-full gap-5">
+                <!-- texto font weigt 700-->
+                <span class="text-sm font-bold">MEN</span>
+                <span class="text-sm font-bold">WOMEN</span>
+                <span class="text-sm font-bold">KIDS</span>
+                <span class="text-sm">SALE</span>
+                <span class="text-sm">3 STRIPE LIFE</span>
+            </div>
+
+            <!-- Contenedor para el icono de búsqueda -->
+            <div class="hidden md:flex card  items-center justify-end mt-2">
+                <div class="relative flex items-center">
+                    <input type="text" placeholder="Search"
+                        class="outline-none border border-gray-300 rounded-lg py-1 px-2 bg-transparent">
+                    <i class="pi pi-search absolute right-2 top-2 text-gray-400"></i>
+                </div>
+
+                <!-- Iconos adicionales -->
+                <div class="flex gap-2 ml-2">
+                    <i class="pi pi-user mx-2" pBadge severity="warning" style="font-size: 1.3rem" value="2"></i>
+                    <i class="pi pi-heart mx-2" style="font-size: 1.3rem"></i>
+                    <i class="pi pi-shopping-bag mx-2" style="font-size: 1.3rem"></i>
+                </div>
+            </div>
+
+
+        </div>
 
     </div>
 </div>
 
-<div class="flex justify-between items-center gap-0">
-    <!-- Contenedor para el botón de menú -->
-    <button (click)="navigateToProduct()">
-        <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" width="200" height="200" viewBox="0 0 200 200">
-            <path d="M 150.07 131.439 L 131.925 100 L 122.206 105.606 L 137.112 131.439 L 150.07 131.439 Z M 132.781 131.439 L 120.797 110.692 L 111.078 116.298 L 119.823 131.439 L 132.781 131.439 Z M 109.718 121.401 L 115.509 131.439 L 102.551 131.439 L 100 127.007 L 109.718 121.401 Z" fill="black"></path>
-        </svg>
-    </button>
-    
-    <!-- Contenedor para el menú -->
-    <div class="flex items-center justify-center w-full">
-        <div class="card">
-            <p-menubar [model]="items" styleClass="responsive-menubar"></p-menubar>
-        </div>
+
+<div class="flex lg:hidden flex-row px-5 py-2 border border-solid justify-between items-center">
+
+    <div class="flex items-center justify-center gap-2">
+        <!-- Contenedor para el botón de menú -->
+        <button (click)="navigateToProduct()" class="w-[40px] h-auto">
+            <i class="pi pi-bars font-bold" style="font-size: 1.4rem"></i>
+        </button>
+
+        <i class="pi pi-heart mx-2" style="font-size: 1.2rem"></i>
     </div>
-    
-    <!-- Contenedor para el icono de búsqueda -->
-    <div class="md:hidden card flex items-center justify-end mr-4">
-        <i class="pi pi-search pi-lg"></i>
+
+    <!-- Contenedor para el logo -->
+    <div class="flex items-center justify-center item-center">
+        <!-- Contenedor para el botón de menú -->
+        <a (click)="navigateToProduct()" class="w-[60px] h-auto">
+            <svg viewBox="100 100 50 32" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M 150.07 131.439 L 131.925 100 L 122.206 105.606 L 137.112 131.439 L 150.07 131.439 Z M 132.781 131.439 L 120.797 110.692 L 111.078 116.298 L 119.823 131.439 L 132.781 131.439 Z M 109.718 121.401 L 115.509 131.439 L 102.551 131.439 L 100 127.007 L 109.718 121.401 Z"
+                    fill="black"></path>
+            </svg>
+        </a>
+
     </div>
-    
-    <!-- Contenedor para el campo de búsqueda y los iconos adicionales -->
-    <div class="hidden md:flex card  items-center justify-end mr-10">
-        <div class="relative flex items-center">
-            <input type="text" placeholder="Search" class="outline-none border border-gray-300 rounded-lg py-1 px-2 text-white bg-transparent">
-            <i class="pi pi-search absolute right-2 top-2 text-gray-400"></i>
+
+
+    <div class="flex flex-row items-end w-fit gap-2">
+        <!-- Contenedor para el icono de búsqueda -->
+        <div class="flex card  items-center justify-end mt-2">
+            <!-- Iconos adicionales -->
+            <div class="flex gap-2 ml-2">
+                <i class="pi pi-user mx-2" pBadge severity="warning" value="2" style="font-size: 1.2rem"></i>
+                <i class="pi pi-search mx-2" style="font-size: 1.2rem"></i>
+                <i class="pi pi-shopping-bag mx-2" style="font-size: 1.2rem"></i>
+            </div>
         </div>
-        
-        <!-- Iconos adicionales -->
-        <i class="pi pi-user mx-2 pi-lg"></i>
-        <i class="pi pi-heart mx-2 pi-lg"></i>
-        <i class="pi pi-shopping-bag mx-2 pi-lg"></i>
+
     </div>
 </div>

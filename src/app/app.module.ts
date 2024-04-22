@@ -18,6 +18,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ImageModule } from 'primeng/image';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { BadgeModule } from 'primeng/badge';
+import { SidebarModule } from 'primeng/sidebar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   ],
   imports: [
     BrowserModule,
+    SidebarModule,
     SlickCarouselModule,
+    BadgeModule,
     ImageModule,
     RouterModule.forRoot([]),
     PaginatorModule,
@@ -42,6 +48,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BreadcrumbModule,
     MenubarModule,
     AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

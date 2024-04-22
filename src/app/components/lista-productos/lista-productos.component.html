@@ -1,64 +1,65 @@
   <!-- product-card.component.html -->
-<hr>
-<div class="product-container flex flex-wrap">
-  <div *ngFor="let product of productos.slice(0,12 )" class="w-full md:w-1/3 px-2 mb-4 relative" (click)="redirectToProduct(product.id)">
-    <p-card>
-      <!-- Imagen -->
-      <div class="relative">
-        <img [src]="product.Image1" alt="Product Image" class="max-w-full h-auto">
-
-        <!-- Precio -->
-        <div class="absolute bottom-0 left-0 bg-white p-2 rounded-tr-lg">
-          <p class="text-sm font-semibold">{{ product.Price }}</p>
-        </div>
-      </div>
-
-      <ng-template pTemplate="footer">
-        <div class="card-footer flex flex-col items-start">
-          <div class="rating-container mb-2">
-            <p-rating [ngModel]="product.Reviews.rating" [readonly]="true" [cancel]="false"></p-rating>
+  <hr />
+  <div class="product-container flex flex-wrap pt-9">
+    <div *ngFor="let product of productos.slice(0,12 )" class="w-full md:w-1/3 px-2 mb-4 relative" (click)="redirectToProduct(product.id)">
+      <p-card>
+        <!-- Imagen -->
+        <div class="relative">
+          <img [src]="product.Image1" alt="Product Image" class="max-w-full h-auto">
+  
+          <!-- Precio -->
+          <div class="absolute bottom-0 left-0 bg-white p-2 rounded-tr-lg">
+            <p class="text-sm font-semibold">{{ product.Price }}</p>
           </div>
-          <p class="product-name">{{ product.Name }}</p>
-          <p class="product-category">{{ product.Category }}</p>
         </div>
-      </ng-template>
-    </p-card>
+  
+        <ng-template pTemplate="footer">
+          <div class="card-footer flex flex-col items-start">
+            <div class="rating-container mb-2">
+              <p-rating [ngModel]="product.Reviews.rating" [readonly]="true" [cancel]="false"></p-rating>
+            </div>
+            <p class="product-name">{{ product.Name }}</p>
+            <p class="product-category">{{ product.Category }}</p>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
   </div>
-</div>
-<div class="card flex justify-center">
-  <div class="flex items-center">
-    <span class="mx-1 text-color">Page: </span>
-    <p-paginator [first]="first" [rows]="rows" [totalRecords]="120"  [showCurrentPageReport]="true"
-        currentPageReportTemplate="{first} of {totalRecords}" [showPageLinks]="false" [showFirstLastIcon]="false" ></p-paginator>
+  <div class="card flex justify-center">
+    <div class="flex items-center">
+      <span class="mx-1 text-color">Page: </span>
+      <p-paginator [first]="first" [rows]="rows" [totalRecords]="120"  [showCurrentPageReport]="true"
+          currentPageReportTemplate="{first} of {totalRecords}" [showPageLinks]="false" [showFirstLastIcon]="false" ></p-paginator>
+    </div>
   </div>
-</div>
-<div class="hidden lg:block">
-<div>
-  <p class="font-bold ml-32">Our clothing and shoe categories</p>
-  <div class="flex flex-wrap justify-center">
-      <p class="mr-6 mt-4">Men's Nmd Shoes</p>
-      <p class="mr-6 mt-4">Men's Ultraboost 1.0 Shoes</p>
-      <p class="mr-6 mt-4">Men's Athletic Sneakers</p>
-      <p class="mr-6 mt-4">Men's Tracksuits</p>
-      <p class="mr-6 mt-4">Men's Tracksuits</p>
-      <p class="mr-6 mt-4">Men's Tracksuits</p>
+  <div class="hidden lg:block">
+  <div>
+    <p class="font-bold ml-32">Our clothing and shoe categories</p>
+    <div class="flex flex-wrap justify-center">
+        <p class="mr-6 mt-4">Men's Nmd Shoes</p>
+        <p class="mr-6 mt-4">Men's Ultraboost 1.0 Shoes</p>
+        <p class="mr-6 mt-4">Men's Athletic Sneakers</p>
+        <p class="mr-6 mt-4">Men's Tracksuits</p>
+        <p class="mr-6 mt-4">Men's Tracksuits</p>
+        <p class="mr-6 mt-4">Men's Tracksuits</p>
+    </div>
+    <div class="flex flex-wrap justify-center">
+        <p class="mr-6 mt-4">Men's Soccer Shoes</p>
+        <p class="mr-6 mt-4">Men's Basketball Shoes</p>
+        <p class="mr-6 mt-4">Men's Stan Smith Shoes</p>
+        <p class="mr-6 mt-4">Men's Hoodies</p>
+        <p class="mr-6 mt-4">Men's Hoodies</p>
+        <p class="mr-6 mt-4">Men's Hoodies</p>
+    </div>
   </div>
-  <div class="flex flex-wrap justify-center">
-      <p class="mr-6 mt-4">Men's Soccer Shoes</p>
-      <p class="mr-6 mt-4">Men's Basketball Shoes</p>
-      <p class="mr-6 mt-4">Men's Stan Smith Shoes</p>
-      <p class="mr-6 mt-4">Men's Hoodies</p>
-      <p class="mr-6 mt-4">Men's Hoodies</p>
-      <p class="mr-6 mt-4">Men's Hoodies</p>
+  <div class="mt-8 max-w-5xl mx-auto ml-32">
+    <h2 class="text-xl font-bold">ADIDAS MEN’S SHOES</h2>
+    <p class="mt-4  pr-4">Step up your game in adidas men’s shoes that help you strut your stuff on and off the court. No matter what you’re doing, comfort is key to enjoying yourself and performing your best. Plush cushioning for every step keeps you moving whether you’re on a fast break or racing to a meeting. adidas men’s sneakers have soft and responsive Boost cushioning, returning energy to your stride. The more you give and the harder you go, the more you get back. Stay fast and agile on your feet with lightweight materials. When you need to change direction quickly to lose a defender, shoe uppers support your feet as you push off. Set new PRs from your morning runs to major marathons, weight training to gym sessions. adidas sports shoes for men help you perform your best and are designed to meet the demands of each unique sport. On the basketball court, soccer fields, race tracks and beyond, lace up shoes like the Dame 7, Copa Sense, Freak Ghost and more to raise your level. After your game, slip into relaxed men’s slides to get your recovery started. Off the field, adidas has men’s sneakers for your everyday life. Whether you prefer the modern athletic vibes of the NMD or Ultraboost or timeless looks like the Stan Smith and Superstar, start from the ground up to express your creative style. Unlimited colors, graphics, and styles offer everything you need to make your mark. Browse adidas for men’s trainers, sneakers and more to step through your day in confidence and style.</p>
+    <p class="mt-4  pr-4">When there are so many attractive men's adidas sneakers available, it is often difficult to choose your preferred pair because there are so many options. Whatever you choose, you can rest assured that you will be able to find the most up-to-date adidas sneakers for men that are suitable for your style. It's a veritable feast of different styles, each of which is designed with functionality, fashion, and performance in mind. If you want to inject a fresh wave of vitality into your footwear collection, look for styles that have interesting color mixes, innovative details, traditional silhouettes, and bold graphics. With adidas men’s shoes, you are all set to deliver your finest performance thanks to your signature style and cutting-edge technologies that boost comfort and support in a wide range of environments. When you have adidas casual leather shoes that amp up your look, you can always locate a great fit for whatever the day may bring.</p>
+    <h3 class="text-lg font-bold mt-4">HOW TO LACE YOUR SHOES</h3>
+    <p class="mt-4 pr-4">Learn more about how to lace your shoes properly and all the different techniques that can help you get the most comfort and functionality out of your shoes. Find our How To Lace Your Shoes library here.</p>
+    <!-- Añade aquí más contenido -->
   </div>
-</div>
-<div class="mt-8 max-w-5xl mx-auto ml-32">
-  <h2 class="text-xl font-bold">ADIDAS MEN’S SHOES</h2>
-  <p class="mt-4  pr-4">Step up your game in adidas men’s shoes that help you strut your stuff on and off the court. No matter what you’re doing, comfort is key to enjoying yourself and performing your best. Plush cushioning for every step keeps you moving whether you’re on a fast break or racing to a meeting. adidas men’s sneakers have soft and responsive Boost cushioning, returning energy to your stride. The more you give and the harder you go, the more you get back. Stay fast and agile on your feet with lightweight materials. When you need to change direction quickly to lose a defender, shoe uppers support your feet as you push off. Set new PRs from your morning runs to major marathons, weight training to gym sessions. adidas sports shoes for men help you perform your best and are designed to meet the demands of each unique sport. On the basketball court, soccer fields, race tracks and beyond, lace up shoes like the Dame 7, Copa Sense, Freak Ghost and more to raise your level. After your game, slip into relaxed men’s slides to get your recovery started. Off the field, adidas has men’s sneakers for your everyday life. Whether you prefer the modern athletic vibes of the NMD or Ultraboost or timeless looks like the Stan Smith and Superstar, start from the ground up to express your creative style. Unlimited colors, graphics, and styles offer everything you need to make your mark. Browse adidas for men’s trainers, sneakers and more to step through your day in confidence and style.</p>
-  <p class="mt-4  pr-4">When there are so many attractive men's adidas sneakers available, it is often difficult to choose your preferred pair because there are so many options. Whatever you choose, you can rest assured that you will be able to find the most up-to-date adidas sneakers for men that are suitable for your style. It's a veritable feast of different styles, each of which is designed with functionality, fashion, and performance in mind. If you want to inject a fresh wave of vitality into your footwear collection, look for styles that have interesting color mixes, innovative details, traditional silhouettes, and bold graphics. With adidas men’s shoes, you are all set to deliver your finest performance thanks to your signature style and cutting-edge technologies that boost comfort and support in a wide range of environments. When you have adidas casual leather shoes that amp up your look, you can always locate a great fit for whatever the day may bring.</p>
-  <h3 class="text-lg font-bold mt-4">HOW TO LACE YOUR SHOES</h3>
-  <p class="mt-4 pr-4">Learn more about how to lace your shoes properly and all the different techniques that can help you get the most comfort and functionality out of your shoes. Find our How To Lace Your Shoes library here.</p>
-  <!-- Añade aquí más contenido -->
-</div>
-</div>
-
+  </div>
+  
+  
